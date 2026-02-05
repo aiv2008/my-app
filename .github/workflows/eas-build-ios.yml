@@ -1,0 +1,28 @@
+# 在 GitHub 推送时或手动触发 EAS 构建 iOS（云端 macOS）
+# 需在仓库 Settings → Secrets 中配置 EXPO_TOKEN
+name: EAS Build iOS
+
+on:
+  push:
+    branches: [main, master]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - run: npm ci
+
+      - uses: expo/expo-github-action@v8
+        with:
+          eas-version: latest
+          token: ${{ secrets.EXPO_TOKEN }}
+
+      - run: eas build -p ios --profile production --non-interactive

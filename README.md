@@ -2,6 +2,13 @@
 
 This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
 
+## 在 WSL 下开发并构建 iOS
+
+若使用 **WSL2** 且无 Mac，可在 WSL 完成日常开发，用 **EAS Build** 在云端构建 iOS。
+
+- 操作步骤：**[docs/WSL-REACT-NATIVE-SETUP.md](docs/WSL-REACT-NATIVE-SETUP.md)**
+- 配置记录（环境选择与结论）：**[docs/SETUP-NOTES.md](docs/SETUP-NOTES.md)**
+
 ## Get started
 
 1. Install dependencies
