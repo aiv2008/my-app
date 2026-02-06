@@ -9,6 +9,12 @@ This is an [Expo](https://expo.dev) project created with [`create-expo-app`](htt
 - 操作步骤：**[docs/WSL-REACT-NATIVE-SETUP.md](docs/WSL-REACT-NATIVE-SETUP.md)**
 - 配置记录（环境选择与结论）：**[docs/SETUP-NOTES.md](docs/SETUP-NOTES.md)**
 
+## 应用入口与路由
+
+- **默认首屏为登录页**：打开应用（或访问 `/`）时会重定向到 **`/login`**。
+- **实现方式**：在 **`app/_layout.tsx`** 中用 `usePathname()` 判断当前路径，当 `pathname === '/'` 时渲染 `<Redirect href="/login" />`，其余路径正常渲染 `Stack`（登录、Tabs、Modal）。`anchor` 仅用于 Web 模态锚点，不控制首屏；Web 端“默认页”由 URL 决定，故需显式重定向。
+- **项目结构说明**：**[docs/PROJECT-STRUCTURE.md](docs/PROJECT-STRUCTURE.md)**
+
 ## Get started
 
 1. Install dependencies

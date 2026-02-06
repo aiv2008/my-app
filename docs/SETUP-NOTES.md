@@ -39,6 +39,17 @@
 
 ---
 
+## 手机真机调试 (Expo Go)
+
+- **问题**：`npm start` 后终端显示的 `exp://172.21.x.x:8081` 是 **WSL2 虚拟网卡 IP**，手机扫码无法访问（手机在局域网，无法连到 WSL 内网）。
+- **推荐**：用 **Tunnel 模式** 启动，生成公网 URL，手机扫码即可连：
+  ```bash
+  npx expo start --tunnel
+  ```
+- **备选**：若手机与电脑在同一 WiFi，可查 Windows 主机 LAN IP（`ipconfig`），在 Expo Go 中手动输入 `exp://192.168.x.x:8081`；WSL2 下有时仍不可用，优先用 `--tunnel`。
+
+---
+
 ## 相关文件
 
 - **EAS 配置**：`eas.json`
