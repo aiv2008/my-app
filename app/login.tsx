@@ -27,13 +27,13 @@ export default function LoginScreen() {
     return (
         <ThemedView style={styles.container}>
             <View style={styles.content}>
-                <ThemedText type="title" style={{ fontSize: 24, alignSelf: 'center' }}>登录你的帐号</ThemedText>
+                <ThemedText type="title" style={{ fontSize: 24, alignSelf: 'center' }}>login</ThemedText>
                 <View style={styles.lineWithText}>
                     <View style={styles.line} />
-                    <ThemedText style={styles.loginLineText}>登录方式</ThemedText>
+                    <ThemedText style={styles.loginLineText}>select your login type</ThemedText>
                     <View style={styles.line} />
                 </View>
-                <Text style={styles.lineText}>手机号</Text>
+                <Text style={styles.lineText}>mobile</Text>
                 <TextInput
                     value={phone}
                     onChangeText={(text) => {
@@ -48,7 +48,7 @@ export default function LoginScreen() {
                     style={[styles.input, phoneError ? styles.inputError : null]}
                 />
                 {phoneError ? <Text style={styles.errorText}>{phoneError}</Text> : null}
-                <Text style={styles.lineText}>密码</Text>
+                <Text style={styles.lineText}>password</Text>
                 <TextInput
                     value={password}
                     onChangeText={setPassword}
