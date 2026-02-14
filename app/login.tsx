@@ -24,6 +24,10 @@ export default function LoginScreen() {
         setPhoneError('');
     };
 
+
+    const handleLogin = () => {
+        router.replace('/(tabs)');
+    };
     return (
         <ThemedView style={styles.container}>
             <View style={styles.content}>
@@ -59,7 +63,7 @@ export default function LoginScreen() {
                 />
 
                 <View style={styles.lineWithText}>
-                    <Pressable style={styles.button}>
+                    <Pressable style={styles.button} onPress={handleLogin}>
                         <ThemedText style={styles.buttonText}>登录</ThemedText>
                     </Pressable>
                 </View>
